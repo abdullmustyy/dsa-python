@@ -68,8 +68,6 @@ class LinkedList:
 
         return temp
 
-        # .value (for testing purpose only)
-
     def pop_first(self):
         temp = self.head
 
@@ -85,7 +83,16 @@ class LinkedList:
 
         return temp
 
-        # .value (for testing purpose only)
+    def get(self, index):
+        temp = self.head
+
+        if index < 0 or index >= self.length:
+            return None
+
+        for _ in range(index):
+            temp = temp.next
+
+        return temp
 
 
 new_linked_list = LinkedList(1)
@@ -93,17 +100,19 @@ new_linked_list = LinkedList(1)
 new_linked_list.append(2)
 new_linked_list.append(3)
 new_linked_list.append(4)
-new_linked_list.append(5)
-new_linked_list.append(6)
+# new_linked_list.append(5)
+# new_linked_list.append(6)
 
-# print(new_linked_list.pop())
-# print(new_linked_list.pop())
-# print(new_linked_list.pop())
-# print(new_linked_list.pop())
+# print("Pop: ", new_linked_list.pop())
+# print("Pop: ", new_linked_list.pop())
+# print("Pop: ", new_linked_list.pop())
+# print("Pop: ", new_linked_list.pop())
 
 # new_linked_list.prepend(9)
 
-print("Pop first: ", new_linked_list.pop_first())
-print("Pop first: ", new_linked_list.pop_first())
+# print("Pop first: ", new_linked_list.pop_first())
+# print("Pop first: ", new_linked_list.pop_first())
 
-new_linked_list.print_list()
+print("Get: ", new_linked_list.get(1))
+
+# new_linked_list.print_list()
