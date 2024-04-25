@@ -94,6 +94,15 @@ class LinkedList:
 
         return temp
 
+    def set_value(self, index, value):
+        temp = self.get(index)
+
+        if temp:
+            temp.value = value
+            return True
+
+        return False
+
 
 new_linked_list = LinkedList(1)
 
@@ -113,6 +122,8 @@ new_linked_list.append(4)
 # print("Pop first: ", new_linked_list.pop_first())
 # print("Pop first: ", new_linked_list.pop_first())
 
-print("Get: ", new_linked_list.get(1))
+# print("Get: ", new_linked_list.get(1).value)
 
-# new_linked_list.print_list()
+print("Set: ", new_linked_list.set_value(1, 9))
+
+new_linked_list.print_list()
